@@ -13,6 +13,23 @@ btn.addEventListener('click',function(){
     document.body.style.backgroundColor = hexColor;
 });
 
+setInterval(()=>{   
+    (()=>{
+        let hexColor = "#";
+        setTimeout(()=>{
+            for(let i=0;i<6;i++)
+            {
+                hexColor += hex[getRandomNumber()]
+            }
+            document.body.style.backgroundColor = hexColor;
+            color.textContent = hexColor;
+            document.body.style.transition = "all ease-in-out 0.5s"    
+        },10000)
+    })()
+},5000)
+
+
+
 function getRandomNumber()
 {
     return Math.floor(Math.random()* hex.length);
